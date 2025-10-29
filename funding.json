@@ -1,0 +1,135 @@
+{
+    "version": "v1.0.0",
+    "entity": {
+        "type": "group",
+        "role": "steward",
+        "name": "Michael R Sweet",
+        "email": "msweet@msweet.org",
+        "phone": "",
+        "description": "I am the creator of CUPS, HTMLDOC, PAPPL, and many other open source projects, author of many standards, and helped create AirPrint.",
+        "webpageUrl": {
+            "url": "https://openprinting.github.io/",
+            "wellKnown": ""
+        }
+    },
+    "projects": [{
+        "guid": "openprinting-cups",
+        "name": "CUPS",
+        "description": "OpenPrinting CUPS is a standards-based, open source printing system for Linux® and other Unix®-like operating systems. CUPS supports printing to\n• AirPrint™ and IPP Everywhere™ printers,\n• Network and local (USB) printers with Printer Applications, and\n• Network and local (USB) printers with (legacy) PPD-based printer drivers.",
+        "webpageUrl": {
+            "url": "https://openprinting.github.io/projects/00-cups/"
+        },
+        "repositoryUrl": {
+            "url": "https://github.com/OpenPrinting/cups/",
+            "wellKnown": ""
+        },
+        "licenses": ["spdx:Apache-2.0"],
+        "tags": ["hardware", "printing", "print-server"]
+    },
+    {
+        "guid": "openprinting-cups-filters",
+        "name": "CUPS filters",
+        "description": "CUPS filters is a package contains backends, filters, and other software that was once part of the core CUPS distribution, but during the time when CUPS was developed at Apple, Apple stopped maintaining these parts as they were not needed by Mac OS.\nThis is a set of applications needed to process PDF, PostScript, raster data, and other formats, and convert it to the printer supported langauge.",
+        "webpageUrl": {
+            "url": "https://openprinting.github.io/projects/01-cups-filters/",
+            "wellKnown": ""
+        },
+        "repositoryUrl": {
+            "url": "https://github.com/OpenPrinting/cups-filters",
+            "wellKnown": ""
+        },
+        "licenses": ["spdx:Apache-2.0"],
+        "tags": ["hardware", "printing", "print-server"]
+    }],
+    "funding": {
+        "channels": [
+            {
+                "guid": "bank-till",
+                "type": "bank",
+                "address": "https://openprinting.github.io/donations/",
+                "description": ""
+            },
+            {
+                "guid": "github-sponsor-michael",
+                "type": "payment-provider",
+                "address": "https://github.com/sponsors/michaelrsweet",
+                "description": ""
+            }
+        ],
+        "plans": [
+            {
+                "guid": "hardware-events-and-other",
+                "status": "active",
+                "name": "Donate hardware (printers, scanners) to Till Kamppeter, or sponsor events and gatherings (bank transfer)",
+                "description": "Please contact us for non-material donations",
+                "amount": 0,
+                "currency": "USD",
+                "frequency": "one-time",
+                "channels": ["bank-till"]
+            },
+            {
+                "guid": "one-time-till",
+                "status": "active",
+                "name": "Donate to Till Kamppeter, CUPS-filters developer and CUPS-related software maintainer",
+                "description": "",
+                "amount": 0,
+                "currency": "USD",
+                "frequency": "one-time",
+                "channels": ["bank-till"]
+            },
+            {
+                "guid": "one-time-michael-coffee",
+                "status": "active",
+                "name": "Michael R Sweet: Coffee Tier",
+                "description": "CUPS development. You'll get a sponsor badge on your Github profile",
+                "amount": 1,
+                "currency": "USD",
+                "frequency": "monthly",
+                "channels": ["github-sponsor-michael"]
+            },
+            {
+                "guid": "one-time-michael-silver",
+                "status": "active",
+                "name": "Michael R Sweet: Silver Tier",
+                "description": "CUPS development. Bug reports you file will be prioritized, you'll get a sponsor badge on your Github profile",
+                "amount": 10,
+                "currency": "USD",
+                "frequency": "monthly",
+                "channels": ["github-sponsor-michael"]
+            },
+            {
+                "guid": "one-time-michael-gold",
+                "status": "active",
+                "name": "Michael R Sweet: Gold Tier",
+                "description": "CUPS development. Printers, formats, and features you need will be prioritized, bug reports you file will be prioritized, you'll get a sponsor badge on your Github profile",
+                "amount": 25,
+                "currency": "USD",
+                "frequency": "monthly",
+                "channels": ["github-sponsor-michael"]
+            },
+            {
+                "guid": "one-time-michael-platinum",
+                "status": "active",
+                "name": "Michael R Sweet: Platinum Tier",
+                "description": "CUPS development. you or your company will be listed as a Platinum Sponsor on www.msweet.org, printers, formats, and features you need will be prioritized, bug reports you file will be prioritized, you'll get a sponsor badge on your Github profile",
+                "amount": 100,
+                "currency": "USD",
+                "frequency": "monthly",
+                "channels": ["github-sponsor-michael"]
+            },
+            {
+                "guid": "one-time-michael-diamond",
+                "status": "active",
+                "name": "Michael R Sweet: Diamond Tier",
+                "description": "CUPS development. you or your company will be listed as a Diamond Sponsor on www.msweet.org, personalized support for you or your company for up to 4 hours/month, bug reports you file will be prioritized, you'll get a sponsor badge on your Github profile",
+                "amount": 10,
+                "currency": "USD",
+                "frequency": "monthly",
+                "channels": ["github-sponsor-michael"]
+            }
+        ],
+        "history": [
+        ]
+    }
+}
+
