@@ -3,7 +3,76 @@ title: Printer Applications and Printer Drivers
 layout: doc
 ---
 
-After much discussion within Apple and OpenPrinting, we decided to deprecate
+The upcoming major release of CUPS, CUPS 3, no longer supports classic printer drivers (.ppd files and filters), allowing to use only modern driverless printers.
+
+However that doesn't mean that all older devices will stop working: many existing drivers have been converted to Printer Applications, a special compatibility layer designed to reuse existing code for CUPS 3 in a secure way.
+
+Am I affected by this change?
+----------------------
+
+**First, determine if your printer supports one of the driverless standards.**  
+If your printer is manufactured after 2011, there's a high chance it supports AirPrint™, IPP Everywhere™ or Mopria® — look for the following logos on your printer or the box it came in:
+
+<table align="center" cellpadding="20">
+<tr>
+  <td><img src="https://developer.apple.com/assets/elements/icons/airprint/airprint-96x96_2x.png" height="192" alt="AirPrint"></td>
+  <td><img src="https://www.pwg.org/ipp/ipp-everywhere-color.svg" height="192" alt="IPP Everywhere"></td>
+  <td><img src="https://mopria.org/images/mopria_logo.svg#joomlaImage://local-images/mopria_logo.svg" height="192" alt="Mopria"></td>
+</tr>
+<tr>
+  <td align="center">AirPrint™</td>
+  <td align="center">IPP Everywhere™</td>
+  <td align="center">Mopria®</td>
+</tr>
+</table>
+
+You can search for your printer model in the certified device list from:
+
+* Apple: [Search for AirPrint-Enabled Printers](https://mfi.apple.com/account/airprint-search)
+* Mopria: [Certified products list](https://mopria.org/certified-products)
+
+**If your printer supports *either* of AirPrint or Mopria, it will work with CUPS
+3 out of the box**.
+
+Another way to check for driverless support using your smartphone: if your
+printer has wired or wireless network (Wi-Fi) and it's possible to print from
+Android or iOS *without any additional application*, it will work with CUPS 3.
+
+**If your printer is not driverless**, check which driver you currently use.
+
+| Driver Name                                         | Supported | Printer Application              |
+| --------------------------------------------------- | --------- | -------------------------------- |
+| IPP Everywhere or Driverless                        | ✔️   | None required                         |
+| Ghostscript (jlet\*, pcl\*, pxl\* [and others][gs]) | ✔️   | [ghostscript-printer-app] |
+| foo2zjs (foo2xqx, foo2hbpl, foo2qpdl)               | ✔️   | [ghostscript-printer-app] |
+| SpliX (Samsung, HP Laser~~jet~~)                    | ✔️   | [ghostscript-printer-app] |
+| brlaser (Brother laser printers)                    | ✔️   | [ghostscript-printer-app] |
+| pxljr                                               | ✔️   | [ghostscript-printer-app] |
+| fxlinuxprint (Fuji Xerox)                           | ✔️   | [ghostscript-printer-app] |
+| c2esp: (Kodak EasyShare)                            | ✔️   | [ghostscript-printer-app] |
+| rastertosag-gdi (Ricoh Aficio SP 1000S/1100S)       | ✔️   | [ghostscript-printer-app] |
+| dymo                                                | ✔️   | [ghostscript-printer-app] |
+| ptouch (Brother P-Touch label printers)             | ✔️   | [ghostscript-printer-app] |
+| Postscript (PS)                                     | ✔️   | [ps-printer-app]          |
+| hpcups                                              | ✔️   | [hplip-printer-app]       |
+| braille                                             | ✔️   | [brf-printer-app]         |
+| Gutenprint                                          | ✔️   | [gutenprint-printer-app]  |
+| Canon UFRII / UFRII-LT                              | ❌   | Ask printer manufacturer  |
+| Canon CAPT                                          | ❌   | Ask printer manufacturer  |
+| Pantum GDI (BM18*, BM22*, M65*, P2*)                | ❌   | Ask printer manufacturer  |
+
+[gs]: https://github.com/OpenPrinting/ghostscript-printer-app?tab=readme-ov-file#contained-printer-drivers-in-the-snap
+[ghostscript-printer-app]: https://github.com/OpenPrinting/ghostscript-printer-app
+[ps-printer-app]: https://github.com/OpenPrinting/ps-printer-app
+[hplip-printer-app]: https://github.com/OpenPrinting/hplip-printer-app
+[brf-printer-app]: https://github.com/OpenPrinting/braille-printer-app
+[gutenprint-printer-app]: https://github.com/OpenPrinting/gutenprint-printer-app
+
+
+---------------
+
+
+After much discussion within OpenPrinting, we decided to deprecate
 support for raw queues and printer drivers starting with CUPS 2.3 in 2019, and
 to work to develop and maintain a collection of *Printer Applications* that
 support the printers still requiring those printer drivers.
